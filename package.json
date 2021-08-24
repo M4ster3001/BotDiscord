@@ -1,0 +1,45 @@
+{
+  "name": "cotacao",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start-server": "sudo docker-compose up --force-recreate",
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "lint:fix": "eslint --fix . --ext ts,tsx",
+    "test": "jest",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "typeorm:run": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run",
+    "typeorm:rvt": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert",
+    "typeorm:ct": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:create -n"
+  },
+  "dependencies": {
+    "@types/node": "^16.7.1",
+    "axios": "^0.21.1",
+    "cron": "^1.8.2",
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "morgan": "^1.10.0",
+    "reflect-metadata": "^0.1.13",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/cron": "^1.7.3",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
+    "@types/morgan": "^1.9.3",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-prettier": "^3.4.1",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.2.1",
+    "ts-node-dev": "^1.1.8"
+  }
+}
