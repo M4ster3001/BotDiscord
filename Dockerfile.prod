@@ -1,17 +1,17 @@
-FROM node
+FROM node:alpine
 
 WORKDIR /usr/app
 
 COPY package.json ./
 
 RUN npm install  \
-    && npm install -g pm2 \
-    && pm2 install typescript
+  && npm install -g pm2 \
+  && pm2 install typescript
 
-RUN npm run build
+# RUN npm run build
 
-COPY ./build .
+COPY . .
 
-EXPOSE $PORT
+EXPOSE ${PORT}
 
 CMD ["npm", "run", "production"]

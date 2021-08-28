@@ -9,9 +9,11 @@ module.exports = {
     "name": "cryptocurrency_quotes",
     "exec_mode": "cluster",
     "instances": numWorkers,
-    "script": "./src/server.js",
+    "script": "./src/server.ts",
+    "interpreter": 'node_modules/.bin/ts-node',
     "max_memory_restart": "1G",
-    "watch": true,
+    "watch": ['src'],
+    "ignore_watch": ['node_modules', 'src/sequelize'],
     env: {
       "NODE_ENV": "development"
     },

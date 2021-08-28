@@ -16,7 +16,9 @@ services:
   #   network_mode: bridge
 
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: ./Dockerfile.prod
     # links:
     #   - db_coins
     # depends_on:
