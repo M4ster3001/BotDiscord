@@ -7,7 +7,7 @@
     "build": "tsc -p ",
     "start-server": "sudo docker-compose up --force-recreate",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "production": "pm2 start ecosystem.config.js",
+    "production": "pm2 start ecosystem.config.ts",
     "lint:fix": "eslint --fix . --ext ts,tsx",
     "test": "jest",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
