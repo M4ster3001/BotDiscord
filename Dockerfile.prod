@@ -12,6 +12,6 @@ RUN npm install  \
 
 COPY . .
 
-EXPOSE ${PORT}
+EXPOSE 3535
 
 CMD ["npm", "run", "production"]
