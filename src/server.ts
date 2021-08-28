@@ -6,7 +6,7 @@ import morgan from "morgan";
 
 import "./bot";
 
-const PORT = 3334;
+const PORT = process.env.NODE_ENV == 'production' ? process.env.PORT : 3334;
 
 const app = express();
 
