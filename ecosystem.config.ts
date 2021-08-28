@@ -10,7 +10,7 @@ module.exports = {
     "exec_mode": "cluster",
     "instances": numWorkers,
     "script": "./src/server.ts",
-    "interpreter": 'node_modules/.bin/ts-node',
+    "interpreter": '/usr/local/lib/node_modules/.bin/ts-node',
     "max_memory_restart": "1G",
     "watch": ['src'],
     "ignore_watch": ['node_modules', 'src/sequelize'],
