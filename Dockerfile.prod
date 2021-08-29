@@ -4,16 +4,17 @@ WORKDIR /usr/app
 
 COPY package.json ./
 
-RUN npm install
+RUN npm install \ 
+  && npm -g install typescript 
 
-# RUN npm run build
+RUN npm run build
 
-RUN npm install -g pm2
+# RUN npm install -g pm2
 
-COPY . .
+COPY ./build .
 
-RUN pm2 install typescript \
-  && pm2 start ecosystem.config.ts
+# RUN pm2 install typescript \
+#   && pm2 start ecosystem.config.ts
 
 EXPOSE 3333
 
