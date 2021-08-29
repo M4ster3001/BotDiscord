@@ -18,7 +18,7 @@ client.on('ready', async () => {
   const next_request = new Date().getTime() + (time_to_request * 60 * 1000);
   console.log(`Próximo: ${new Date(next_request).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}`);
 
-  await Messages.sendMessage(client, time_to_request);
+  // await Messages.sendMessage(client, time_to_request);
   
   let scheduledMessage = new CronJob(`*/${time_to_request} * * * *`, async () => {
     let next_request_seconds = new Date().getTime() + (time_to_request * 60 * 1000);

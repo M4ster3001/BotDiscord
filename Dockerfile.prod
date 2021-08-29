@@ -8,11 +8,12 @@ RUN npm install
 
 # RUN npm run build
 
-RUN npm install -g pm2 \
-  && pm2 install typescript \
-  && pm2 start ecosystem.config.ts
+RUN npm install -g pm2
 
 COPY . .
+
+RUN pm2 install typescript \
+  && pm2 start ecosystem.config.ts
 
 EXPOSE 3333
 
